@@ -1,0 +1,8 @@
+tasks:
+  - init: |
+      npm install
+      npm run compile
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
