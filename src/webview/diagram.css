@@ -1,0 +1,20 @@
+.sprotty-node {
+    fill: rgb(168, 214, 223);
+    stroke: rgb(88, 112, 117);
+    stroke-width: 2;
+}
+
+.sprotty-node.selected {
+    fill: rgb(168, 223, 197);
+    stroke: rgb(111, 156, 135);
+}
+
+.sprotty-node.mouseover {
+    stroke-width: 4;
+}
+
+.sprotty-edge {
+    fill: none;
+    stroke: rgb(88, 112, 117);
+    stroke-width: 2;
+}

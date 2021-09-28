@@ -1,19 +1,23 @@
+import 'reflect-metadata';
 import * as vscode from 'vscode';
 import { Container } from 'inversify';
 import { TYPES } from 'sprotty/lib/base/types';
 import { SprottyDiagramIdentifier, SprottyVscodeExtension, SprottyWebview, SprottyWebviewOptions } from 'sprotty-vscode';
-import { elkLayoutModule, ElkFactory } from 'sprotty-elk';
+import { elkLayoutModule, ElkFactory, ILayoutConfigurator } from 'sprotty-elk';
 import ElkConstructor from 'elkjs/lib/elk.bundled';
 import { Action } from './sprotty-node/actions';
 import { DiagramServer, DiagramServices } from './sprotty-node/diagram-server';
+import { MlirLayoutConfig } from './layout-config';
 
 let extension: SprottyVscodeExtension | undefined;
 
+/** Function called by vscode when the extension is activated */
 export function activate(context: vscode.ExtensionContext) {
 	const container = createExtensionContainer();
     extension = new MlirVscodeExtension(context, container);
 }
 
+/** Function called by vscode when the extension is deactivated */
 export function deactivate(): Thenable<void> {
     if (extension) {
     	extension = undefined;
@@ -21,6 +25,7 @@ export function deactivate(): Thenable<void> {
 	return Promise.resolve();
 }
 
+/** Sprotty integration that manages webviews to display diagrams */
 export class MlirVscodeExtension extends SprottyVscodeExtension {
 
 	constructor(context: vscode.ExtensionContext, protected container: Container) {
@@ -48,6 +53,7 @@ export class MlirVscodeExtension extends SprottyVscodeExtension {
 
 }
 
+/** MLIR diagram webview connecting the actions stream with the DiagramServer */
 export class MlirWebview extends SprottyWebview {
 
 	readonly server: DiagramServer;
@@ -76,6 +82,7 @@ export class MlirWebview extends SprottyWebview {
 export function createExtensionContainer(): Container {
 	const container = new Container();
 	container.load(elkLayoutModule);
+	container.rebind(ILayoutConfigurator).to(MlirLayoutConfig);
 	container.bind(ElkFactory).toConstantValue(() => new ElkConstructor({
         algorithms: ['layered']
     }));
