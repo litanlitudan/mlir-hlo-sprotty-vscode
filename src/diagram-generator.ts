@@ -1,4 +1,10 @@
-import { Bar, Foo } from './diagram-model';
+/******************************************************************************
+ * Copyright 2021 TypeFox GmbH and others
+ * This program and the accompanying materials are made available under the
+ * terms of the MIT License, which is available in the project root.
+ ******************************************************************************/
+
+ import { Bar, Foo } from './diagram-model';
 import { SEdge, SModelRoot } from './sprotty-node/model';
 
 export async function generateDiagram(context: Generator.Context): Promise<SModelRoot> {

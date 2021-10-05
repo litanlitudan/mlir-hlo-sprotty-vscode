@@ -1,4 +1,10 @@
-import { Bounds, Point, Dimension } from './geometry';
+/******************************************************************************
+ * Copyright 2021 TypeFox GmbH and others
+ * This program and the accompanying materials are made available under the
+ * terms of the MIT License, which is available in the project root.
+ ******************************************************************************/
+
+ import { Bounds, Point, Dimension } from './geometry';
 
 export interface SModelElement {
     type: string;

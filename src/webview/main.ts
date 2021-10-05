@@ -1,4 +1,10 @@
-import 'reflect-metadata';
+/******************************************************************************
+ * Copyright 2021 TypeFox GmbH and others
+ * This program and the accompanying materials are made available under the
+ * terms of the MIT License, which is available in the project root.
+ ******************************************************************************/
+
+ import 'reflect-metadata';
 import 'sprotty/css/sprotty.css';
 import 'sprotty-vscode-webview/css/sprotty-vscode.css';
 import './diagram.css';

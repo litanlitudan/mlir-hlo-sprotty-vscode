@@ -1,4 +1,10 @@
-import { SModelIndex } from 'sprotty/lib/base/model/smodel';
+/******************************************************************************
+ * Copyright 2021 TypeFox GmbH and others
+ * This program and the accompanying materials are made available under the
+ * terms of the MIT License, which is available in the project root.
+ ******************************************************************************/
+
+ import { SModelIndex } from 'sprotty/lib/base/model/smodel';
 import { SModelElement, SModelRoot } from './model';
 import { BoundsAware, Alignable } from './geometry';
 import { ComputedBoundsAction } from './actions';
