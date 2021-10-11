@@ -1,4 +1,10 @@
-import { Deferred } from 'sprotty/lib/utils/async';
+/******************************************************************************
+ * Copyright 2021 TypeFox GmbH and others
+ * This program and the accompanying materials are made available under the
+ * terms of the MIT License, which is available in the project root.
+ ******************************************************************************/
+
+ import { Deferred } from 'sprotty/lib/utils/async';
 import { IModelLayoutEngine } from 'sprotty/lib/model-source/local-model-source';
 import {
     Action, isResponseAction, ResponseAction, RequestModelAction, ComputedBoundsAction, LayoutAction, RequestBoundsAction,

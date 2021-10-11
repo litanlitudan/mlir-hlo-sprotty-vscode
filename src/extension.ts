@@ -1,4 +1,10 @@
-import 'reflect-metadata';
+/******************************************************************************
+ * Copyright 2021 TypeFox GmbH and others
+ * This program and the accompanying materials are made available under the
+ * terms of the MIT License, which is available in the project root.
+ ******************************************************************************/
+
+ import 'reflect-metadata';
 import * as vscode from 'vscode';
 import { Container } from 'inversify';
 import { TYPES } from 'sprotty/lib/base/types';
